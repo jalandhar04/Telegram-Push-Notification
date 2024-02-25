@@ -1,0 +1,89 @@
+/* Telegram Push Notification CSS */
+.popup-container {
+    position: fixed;
+    width: 100%;
+    max-width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+#popup {
+    padding: 20px;
+    background-color: var(--base-3);
+    border-radius: 0.5em;
+    box-shadow: 0 1px 6px rgba(5, 27, 44, 0.06),
+        0 2px 32px rgba(5, 27, 44, 0.16);
+}
+
+.popup {
+    animation-name: showPopup;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showPopup {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.closePopup {
+    animation-name: closePopup;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes closePopup {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+.popup-body {
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-body-message {
+    width: calc(100% - 80px);
+    margin: 0 auto auto;
+}
+
+.popup-footer {
+    display: flex;
+    column-gap: 20px;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+.popup-footer button {
+    background: #0078d1;
+    color: var(--base-3);
+    border-radius: 5px;
+}
+
+.popup-footer button#no {
+    background: var(--base-3);
+    color: #0078d1 !important;
+}
